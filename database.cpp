@@ -41,15 +41,8 @@ std::string get(std::string document, std::string key)
 
 void set(std::string document, std::string key, std::string value)
 {
-    std::ifstream old_doc("database/" + document + ".txt"); // No need to error handle here; its handled by the ofstream
-
-    std::ofstream new_doc("database/" + document + ".txt");
-    if (!new_doc.is_open())
-    {
-        // Shouldn't reach here, ofstream will open the doc if it exists and make one if it doesn't.
-        std::cout << "Error: Could not open or create document \"" << document << ".txt\" " << std::endl;
-        return;
-    }
+    std::ifstream old_doc("database/" + document + ".txt");
+    std::ofstream new_doc("database/temp.txt"); // a temp file is required for proper overwriting.
 
     // Iterates through the old file until it finds an entry to overwrite; if it doesn't; adds it to the end.
     std::string line;
@@ -77,6 +70,12 @@ void set(std::string document, std::string key, std::string value)
 
     old_doc.close();
     new_doc.close();
+
+    // temp.txt is the revised document; replace the old doc with temp
+    std::string new_name_str = "database/" + document + ".txt";
+
+    std::remove(new_name_str.c_str());
+    std::rename("database/temp.txt", new_name_str.c_str());
 };
 
 void display(std::string document)
