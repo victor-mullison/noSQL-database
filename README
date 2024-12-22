@@ -1,0 +1,20 @@
+-- C++ Based NoSQL Database --
+A locally stored NoSQL database made with C++. Behaviour of database resembles Firebase Firestore.
+
+The database can throw errors if given incorrectly formatted commands! This is intentional! I purposefully left some niche cases unresolved because I am planning to use this project in a future repository to demonstrate proficiency with automated test cases. If commands are entered properly, the database will always work.
+
+Build instructions:
+
+IMPORTANT!
+Must have a folder named 'database' in the root directory! This is where the information will be stored.
+
+Requires a C++ compiler, instructions given for g++
+
+From the root directory, 
+Run: g++ -o output_name probability_test.cpp
+
+To run the built program, 
+Run: ./output_name.exe
+
+
+
