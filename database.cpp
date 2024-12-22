@@ -94,7 +94,7 @@ void display(std::string document)
     {
         std::vector<std::string> split_line;
         split_line = split(line);
-        std::cout << std::setw(20) << split_line[0] << " : " << split_line[1] << std::endl;
+        std::cout << std::setw(10) << split_line[0] << " : " << split_line[1] << std::endl;
     }
     doc.close();
 };

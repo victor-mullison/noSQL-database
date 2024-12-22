@@ -11,7 +11,7 @@ Must have a folder named 'database' in the root directory! This is where the inf
 Requires a C++ compiler, instructions given for g++
 
 From the root directory, 
-Run: g++ -o output_name probability_test.cpp
+Run: g++ -o output_name database.cpp
 
 To run the built program, 
 Run: ./output_name.exe
